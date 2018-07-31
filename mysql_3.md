@@ -6,7 +6,7 @@
 
 ## 1.数据的完整性
 
- ![图片1](images\图片1.png)
+ ![image](https://github.com/HoeXNoon/mysql/blob/master/images/%E5%9B%BE%E7%89%871.png)
 
 ```mysql
 1.实体的完整性:一个实体就是一条记录,如果记录无法区分,称之为失去了数据的完整性.
@@ -211,7 +211,7 @@ stu
 
 ## 4.数据库的设计
 
- ![图片2](images\图片2.png)
+ ![image](https://github.com/HoeXNoon/mysql/blob/master/images/%E5%9B%BE%E7%89%872.png)
 
 
 
@@ -253,7 +253,7 @@ stu
 
 ### (2)写出实体的属性
 
- ![图片3](images\图片3.png)
+ ![image](https://github.com/HoeXNoon/mysql/blob/master/images/%E5%9B%BE%E7%89%873.png)
 
 
 
@@ -271,7 +271,7 @@ stu
 
 
 
- ![图片4](images\图片4.png)
+ ![image](https://github.com/HoeXNoon/mysql/blob/master/images/%E5%9B%BE%E7%89%874.png)
 
 ```mysql
 将E-R图转成表,自己玩.
@@ -295,7 +295,7 @@ stu
 
 
 
- ![图片5](images\图片5.png)
+ ![image](https://github.com/HoeXNoon/mysql/blob/master/images/%E5%9B%BE%E7%89%875.png)
 
 ```mysql
 地址到底可不可以在分,那么需要看你有没有这个需求
@@ -309,7 +309,7 @@ stu
 第二范式:非主键字段必须依赖主键字段(一个表只描述一件事情)
 ```
 
- ![图片6](images\图片6.png)
+ ![image](https://github.com/HoeXNoon/mysql/blob/master/images/%E5%9B%BE%E7%89%876.png)
 
 
 
@@ -321,7 +321,7 @@ stu
 第三范式:在非主键字段中,一个字段确定了,其它字段也确定称为传递依赖
 ```
 
-![图片7](file:///C:/Users/ruidong/Desktop/1802-mysql/mysql_3/images/%E5%9B%BE%E7%89%877.png?lastModify=1523944968)
+![image](https://github.com/HoeXNoon/mysql/blob/master/images/%E5%9B%BE%E7%89%877.png)
 
  ![图片7](images\图片7.png)
 
@@ -337,7 +337,7 @@ stu
 3.公司按照工时和小时工资率支付工资,小时的工资率由职务决定(例如,技术人员的小时工资率与工程师不同)
 ```
 
- ![![图片8](file:///C:/Users/ruidong/Desktop/1802-mysql/mysql_3/images/%E5%9B%BE%E7%89%878.png?lastModify=1523944968)](images\图片8.png)
+ ![image](https://github.com/HoeXNoon/mysql/blob/master/images/%E5%9B%BE%E7%89%878.png)
 
 
 
