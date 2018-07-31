@@ -323,8 +323,6 @@ stu
 
 ![image](https://github.com/HoeXNoon/mysql/blob/master/images/%E5%9B%BE%E7%89%877.png)
 
- ![图片7](images\图片7.png)
-
 第三范式的约束是非主键之间的
 
 ## 5.数据库设计
