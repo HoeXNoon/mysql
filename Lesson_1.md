@@ -1,30 +1,22 @@
-
-
 ## MySql
 
 ### 1.数据库介绍
 数据库是用来存放数据的,数据不是直接存放在数据库中的,数据库中存放的是表,表中存放的才是数据.
 
 #### 2.2层次模型
-
 ```python
 1.优点:查询分类的数据效率比较高
 2.缺点:
     导航结构,如果查找不同类型的数据,那么效率非常低
     数据的不完整(如下图)
 ```
-
-
-
-  ![图片2](images\图片2.png)
-
 `注意:在数据库中,数据本身是没有对错之分的,如果数据不正确的话我们称之为'数据不完整'或'失去了数据的完整性'`
 
 #### 2.3网状模型
 
 `注意:网状模型解决了数据的不完整性,但是没有解决导航问题.`
 
-#### 2.关系模型
+#### 2.4关系模型
 
 现在的主流数据库都是关系型数据库
 
@@ -34,8 +26,6 @@
 谨记:关系模型在多表查询的时候并且数据量很大的时候,它的执行效率很低.
     在项目中,我们通过非关系型数据库来解决此问题(NoSql),redis.MongoDB.
 ```
-
-
 
 ### 3.记录.行.列.字段.属性.字段的属性.数据
 
@@ -71,35 +61,26 @@
 **然后重启iptables：**`service iptables restart`
 
 ### 5.用户管理
-
 ```mysql
 mysqld --skip--grant--tables
 #(5.5最好用)
 #--skip--grant--tables 跳过登陆验证(MYSQL服务器开起中)
 ```
-
 ### (1)创建用户
-
 ```mysql
 语法：create user ‘用户名’@’允许登录的主机地址’  identified by 密码
 ```
-
 ```mysql
 create user 'qinzhenpeng'@'%' identified by 'root';
 ```
-
 ### (2)删除用户
-
 ```mysql
 语法：drop user 用户名
 ```
-
 ```mysql
 drop user qinzhenpeng;
 ```
-
 ### (3)增加用户权限
-
 ```mysql
 #将python的所有表的select权限付给ruidong用户
 grant select on python.* to 'qinzhenpeng'@'%';  
@@ -113,7 +94,6 @@ grant all privileges on *.* to 'qinzhenpeng'@'%'identified by '123456' with gran
 #创建好用户以后,刷新mysql用户权限表
 flush privileges ;(linux ,mac)
 ```
-
 ```mysql
 revoke select on python.* from 'ruidong'@'%';   #删除select权限
 revoke all privileges on *.* from 'ruidong'@'%'; #删除所有权限
@@ -145,7 +125,6 @@ update mysql.user set authentication_string=password('123456') where user='root'
 #特别提醒注意的一点是，新版的mysql数据库下的user表中已经没有Password字段了
 #而是将加密后的用户密码存储于authentication_string字段
 
-
 #执行刷新
  flush privileges;
 #exit退出mysql
@@ -153,8 +132,6 @@ exit;
 #启动服务
 service mysqld start
 ```
-
-
 
 ### 5.windows命令行运行客户端
 
@@ -173,7 +150,6 @@ service mysqld start
 #### (2).连接MySql服务器
 
 `mysql -hlocalhost -uroot -proot -P3306`
-
 ```python
 localhost 代表本地的IP地址
 host 主机 -h
@@ -183,7 +159,6 @@ port   端口号    -P
 ```
 
 #### (3).断开连接
-
 ```mysql
 1.quit
 2.exit
@@ -191,7 +166,6 @@ port   端口号    -P
 ```
 
 #### (4)SQL语句
-
 [SQL](https://baike.baidu.com/item/SQL)即结构化查询语言(Structured Query Language)，是一种特殊目的的编程语言，是一种数据库查询和程序设计语言，用于存取数据以及查询、更新和管理关系数据库系统；同时也是数据库脚本文件的扩展名。SQL语句无论是种类还是数量都是繁多的，很多语句也是经常要用到的，SQL查询语句就是一个典型的例子，无论是高级查询还是低级查询，SQL查询语句的需求是最频繁的。
 
 | 关系型数据库     | 公司   | 扩展     |
@@ -205,8 +179,6 @@ port   端口号    -P
 思考:已知SQL是标准SQL,那么在oracle上编写的PL/SQL能否在MySql上运行?
 答案:不能,能相互运行的只是标准SQL.
 ```
-
-
 
 #### (5)数据库操作
 
@@ -270,10 +242,6 @@ drop database if exists `数据库名`;
 use `数据库名`;
 ```
 
-----
-
-----
-
 ### 6.表的操作
 
 #### (1)创建表
@@ -330,8 +298,6 @@ create table 数据库名.表名(
     set names gbk
 ```
 
-
-
 #### 7.数据库文件
 
 一个数据库对应一个文件夹,一个表对应一个文件
@@ -368,8 +334,6 @@ ibdata1 ->它是储存innodb数据的,如果ibdata1满了,他会自动创建ibda
 默认的情况下,innodb的数据都存放在ibdata1文件中,可以在创建表的时候指定innodb和myisam一样,表和数据不存放在一起(后面提到)
 ```
 
-
-
 ### 8.表的操作
 
 #### (1)显示表
@@ -386,8 +350,6 @@ ibdata1 ->它是储存innodb数据的,如果ibdata1满了,他会自动创建ibda
 2 rows in set
 ```
 
-
-
 #### (2)显示建表结构
 
 `show create table user\G`
@@ -403,8 +365,6 @@ Create Table: CREATE TABLE `user` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8
 1 row in set (0.00 sec)
 ```
-
-
 
 #### (3)删除表
 
@@ -433,8 +393,6 @@ desc `表名`;  | describe `user`;
 +-------+------------------+------+-----+---------+----------------+
 2 rows in set
 ```
-
-
 
 #### (5)更改表
 
@@ -484,8 +442,6 @@ alter table `表名` engine=innodb|myisam;
 alter table `原表名` rename to java.user;
 ```
 
-
-
 #### (6)复制表
 
 ```mysql
@@ -503,8 +459,6 @@ create table `新表` like `原来的表`;
 1.它可以复制主键
 2.但是不会复制数据
 ```
-
-
 
 #### (7)数据操作
 
@@ -527,12 +481,7 @@ create table `新表` like `原来的表`;
 
 md5()在mysql中可以直接加密,在python中hashlib.md5().
 
-
-
-
 md5在项目中怎么加密.
-
-
 
 ```mysql
 md5(123456) --->e10adc3949ba59abbe56e057f20f883e
@@ -540,8 +489,6 @@ md5(123456) --->e10adc3949ba59abbe56e057f20f883e
 md5(e10adc3949ba59abbe56e057f20f883e+admin)
 
 ```
-
-
 
 ##### b.修改数据
 
