@@ -1,5 +1,3 @@
-# Lesson_5
-
 # MySql-高级
 
 ## 1.存储过程(procedure)
@@ -681,32 +679,4 @@ exit;
 #启动服务
 service mysqld start
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
