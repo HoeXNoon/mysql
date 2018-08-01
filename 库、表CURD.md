@@ -134,6 +134,9 @@ service mysqld start
 ```
 
 ### 5.windows命令行运行客户端
+centos 启动mysqlservice mysqld start
+
+ubantu 启动mysql service mysql start
 
 #### (1).启动MySql
 
